@@ -9,6 +9,6 @@ scalaVersion := "2.11.1"
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 
 libraryDependencies ++= Seq(
-  ws
+  ws,
   "fi.pyppe" %% "play-simple-auth" % "0.1-SNAPSHOT" changing()
 )
