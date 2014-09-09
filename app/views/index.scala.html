@@ -14,7 +14,7 @@
       @if(session.isEmpty) {
         <h1>play-simple-auth <small>example</small></h1>
         @if(flash.get("loggedOut").isDefined) {
-          <div class="alert-box">
+          <div data-alert class="alert-box success">
             You have been logged out.
             <a href="#" class="close">&times;</a>
           </div>
@@ -25,6 +25,7 @@
           <p>You may use any of the links below to log-in:</p>
           <div id="loginOptions">
             @loginButton("facebook")
+            @loginButton("github")
             @loginButton("google")
             @loginButton("twitter")
           </div>
