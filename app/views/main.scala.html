@@ -4,8 +4,9 @@
 <html>
     <head>
       <title>@title</title>
-      <link rel="stylesheet" media="screen" href="/assets/stylesheets/lib/foundation.min.css" />
-      <link rel="stylesheet" media="screen" href="/assets/stylesheets/main.css" />
+      <link rel="stylesheet" href="/assets/stylesheets/lib/foundation.min.css" />
+      <link rel="stylesheet" href="/assets/stylesheets/main.css" />
+      <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css" />
       <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
       <link rel="shortcut icon" type="image/png" href="/assets/images/favicon.png" />
       <script type="text/javascript" src="/assets/javascripts/lib/modernizr.js"></script>
@@ -13,7 +14,7 @@
     <body>
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
-          <li class="name"><h1><a href="#">play-simple-auth example</a></h1></li>
+          <li class="name"><h1><a href="#">play-simple-auth <small>example</small></a></h1></li>
           <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
           <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
@@ -28,8 +29,10 @@
       <script type="text/javascript" src="/assets/javascripts/lib/jquery.js"></script>
       <script type="text/javascript" src="/assets/javascripts/lib/fastclick.js"></script>
       <script type="text/javascript" src="/assets/javascripts/lib/foundation.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
       <script type="text/javascript">
         $(document).foundation();
+        hljs.initHighlightingOnLoad();
       </script>
     </body>
 </html>

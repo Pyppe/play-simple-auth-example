@@ -1,4 +1,4 @@
-@()(implicit flash: Flash, session: Session)
+@(userJson: Option[String])(implicit flash: Flash, session: Session)
 
 @loginButton(provider: String) = {
 <a href="/authenticate/@provider" class="button" data-tooltip title="Login with @provider.capitalize">
@@ -22,7 +22,7 @@
         <div class="alert-box secondary">
           <p>This is an example of a web application utilizing
             <a href="http://github.com/Pyppe/play-simple-auth">play-simple-auth</a> library.</p>
-          <p>You may use any of the links below to log-in:</p>
+          <p>You may use any of the links below to sign in:</p>
           <div id="loginOptions">
             @loginButton("facebook")
             @loginButton("github")
@@ -39,6 +39,12 @@
       </h1>
       <p>You are logged in. Cool!</p>
       <a href="/logout" class="button alert"><i class="fa fa-sign-out"></i> Logout</a>
+
+      @userJson.map { userJson =>
+        <h2>Received user JSON</h2>
+        <pre><code class="json">@userJson</code></pre>
+      }
+
       }
     </div>
   </div>
