@@ -4,6 +4,7 @@
 
 # Home page
 GET     /                                  controllers.Application.index
+GET     /logout                            controllers.Application.logout
 
 # play-simple-auth
 GET     /authenticate/:provider            controllers.Application.authenticate(provider: String)

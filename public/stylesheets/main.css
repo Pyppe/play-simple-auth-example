@@ -1,0 +1,5 @@
+.top-bar .fa { font-size: 170%; vertical-align: middle; line-height: 0; }
+
+.avatar { -webkit-border-radius: 200px; -moz-border-radius: 200px; -ms-border-radius: 200px; -o-border-radius: 200px; border-radius: 200px; max-width: 50px; max-height: 50px; }
+
+button > .fa, .button > .fa { font-size: 150%; vertical-align: middle; line-height: 0; }

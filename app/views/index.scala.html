@@ -1,20 +1,36 @@
-@()(implicit session: Session)
+@()(implicit flash: Flash, session: Session)
 
-@main("Welcome to Play") {
+@main("play-simple-auth example") {
 
-  <h1>Hello</h1>
-  @if(!session.isEmpty) {
-    <ul>
-      @session.get("user.name").map { name =>
-        <li>Name: <strong>@name</strong></li>
+  <div class="row">
+    <div class="large-12 columns">
+      @if(session.isEmpty) {
+        <h1>play-simple-auth <small>example</small></h1>
+        @if(flash.get("loggedOut").isDefined) {
+          <div class="alert-box">
+            You have been logged out.
+            <a href="#" class="close">&times;</a>
+          </div>
+        }
+        <div class="alert-box secondary">
+          <p>This is an example of a web application utilizing
+            <a href="http://github.com/Pyppe/play-simple-auth">play-simple-auth</a> library.</p>
+          <p>You may use any of the links below to log-in:</p>
+          <a href="/authenticate/facebook" class="button" data-tooltip title="Login with Facebook"><i class="fa fa-facebook"></i> Facebook</a>
+          <a href="/authenticate/google" class="button"><i class="fa fa-google"></i> Google</a>
+          <a href="/authenticate/twitter" class="button"><i class="fa fa-twitter"></i> Twitter</a>
+        </div>
+      } else {
+      <h1>Welcome,
+        @session.get("user.image").map { image =>
+        <img class="avatar" src="@image" />
+        }
+        <small>@session("user.name")</small>
+      </h1>
+      <p>You are logged in. Cool!</p>
+      <a href="/logout" class="button alert"><i class="fa fa-sign-out"></i> Logout</a>
       }
-      @session.get("user.email").map { email =>
-        <li>Email: <strong>@email</strong></li>
-      }
-      @session.get("user.image").map { image =>
-        <img src="@image" />
-      }
-    </ul>
-  }
+    </div>
+  </div>
 
 }

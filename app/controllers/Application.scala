@@ -33,4 +33,8 @@ object Application extends Controller {
     }
   }
 
+  def logout = Action { implicit req =>
+    Redirect("/").withNewSession.flashing("loggedOut" -> "true")
+  }
+
 }
