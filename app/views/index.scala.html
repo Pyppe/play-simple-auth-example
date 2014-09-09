@@ -1,5 +1,12 @@
 @()(implicit flash: Flash, session: Session)
 
+@loginButton(provider: String) = {
+<a href="/authenticate/@provider" class="button" data-tooltip title="Login with @provider.capitalize">
+  <i class="fa fa-@provider"></i>
+  @provider.capitalize
+</a>
+}
+
 @main("play-simple-auth example") {
 
   <div class="row">
@@ -16,9 +23,11 @@
           <p>This is an example of a web application utilizing
             <a href="http://github.com/Pyppe/play-simple-auth">play-simple-auth</a> library.</p>
           <p>You may use any of the links below to log-in:</p>
-          <a href="/authenticate/facebook" class="button" data-tooltip title="Login with Facebook"><i class="fa fa-facebook"></i> Facebook</a>
-          <a href="/authenticate/google" class="button"><i class="fa fa-google"></i> Google</a>
-          <a href="/authenticate/twitter" class="button"><i class="fa fa-twitter"></i> Twitter</a>
+          <div id="loginOptions">
+            @loginButton("facebook")
+            @loginButton("google")
+            @loginButton("twitter")
+          </div>
         </div>
       } else {
       <h1>Welcome,
