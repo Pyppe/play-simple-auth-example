@@ -11,5 +11,5 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 libraryDependencies ++= Seq(
   cache,
   ws,
-  "fi.pyppe" %% "play-simple-auth" % "0.1-SNAPSHOT" changing()
+  "fi.pyppe" %% "play-simple-auth" % "1.0"
 )
